@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tanush Bus Reservation - search buses, choose seats and book your journey online.">
+  <title>Tanush Bus Reservation | Online Bus Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Tanush Bus Reservation home">
+      <span class="brand-icon">▣</span>
+      <span><strong>Tanush<span>Bus</span></strong><small>Online Bus Ticket Booking</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <nav id="mainNav">
+      <a class="active" href="#home">Home</a>
+      <a href="#routes">Bus Routes</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="nav-login" id="myBookingsBtn">My Bookings</button>
+      <a class="signup" href="#search">Book Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">TRAVEL COMFORTABLY • TRAVEL SAFELY</p>
+        <h1>Book Bus Tickets<br>Online Easily</h1>
+        <p class="hero-sub">Search <b>•</b> Select <b>•</b> Book <b>•</b> Travel</p>
+        <a class="primary-btn" href="#search">Book Your Seat <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="search-wrap" id="search">
+      <form class="search-panel" id="searchForm">
+        <label><span>⌖</span><div>From<input id="source" list="cities" placeholder="Enter source" required></div></label>
+        <button type="button" class="swap-btn" id="swapBtn" title="Swap locations">⇄</button>
+        <label><span>⌖</span><div>To<input id="destination" list="cities" placeholder="Enter destination" required></div></label>
+        <datalist id="cities"><option>Kurnool</option><option>Hyderabad</option><option>Bangalore</option><option>Vijayawada</option><option>Vizag</option><option>Tirupati</option><option>Chennai</option></datalist>
+        <label class="date-label"><span>▦</span><div>Journey Date<input id="journeyDate" type="date" required></div></label>
+        <button class="search-btn" type="submit">⌕ &nbsp; Search Buses</button>
+      </form>
+    </section>
+
+    <section class="benefits">
+      <div><i>ϟ</i><span><b>Instant Booking</b><small>Book in seconds</small></span></div>
+      <div><i>♧</i><span><b>Safe & Secure</b><small>Secure booking experience</small></span></div>
+      <div><i>₹</i><span><b>Best Prices</b><small>No hidden charges</small></span></div>
+      <div><i>♧</i><span><b>Travel Support</b><small>We are here to help</small></span></div>
+    </section>
+
+    <section class="section routes-section" id="routes">
+      <div class="section-heading"><div><p class="eyebrow orange">POPULAR DESTINATIONS</p><h2>Popular Bus Routes</h2><p>Choose your route and reserve your seat today.</p></div></div>
+      <div class="route-grid" id="routeGrid"></div>
+    </section>
+
+    <section class="results-section" id="resultsSection" hidden>
+      <div class="section-heading"><div><p class="eyebrow orange">AVAILABLE SERVICES</p><h2>Available Buses</h2><p id="resultsSubtitle"></p></div></div>
+      <div id="busResults" class="bus-results"></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-copy"><p class="eyebrow orange">YOUR JOURNEY, OUR PRIORITY</p><h2>About <span>TanushBus</span></h2>
+        <p>TanushBus makes bus travel simple and convenient. Search for buses, compare fares, select your preferred seat and keep your booking details in one place.</p>
+        <a href="#search" class="outline-btn">Plan Your Journey →</a>
+      </div>
+      <div class="about-art"><div class="bus-stop">🚏<small>YOUR NEXT STOP<br>IS AN ADVENTURE</small></div></div>
+    </section>
+
+    <section class="app-banner">
+      <div class="phone-art">📱</div>
+      <div><p class="eyebrow orange">TRAVEL MADE SIMPLE</p><h2>Get the <span>TanushBus</span> Experience</h2><p>Book, manage and view your bus tickets with ease.</p></div>
+      <div class="qr-art" aria-label="Decorative QR-style pattern">▦<small>BOOK ONLINE ANYTIME</small></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="brand" href="#home"><span class="brand-icon">▣</span><span><strong>Tanush<span>Bus</span></strong><small>Online Bus Ticket Booking</small></span></a><p>Making every journey comfortable.</p></div>
+      <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#search">Book Bus</a><a href="#about">About Us</a><a href="#contact">Contact</a></div>
+      <div><h3>Help & Support</h3><a href="#contact">FAQs</a><a href="#contact">Cancellation</a><a href="#contact">Booking Policy</a><a href="#contact">Terms & Conditions</a></div>
+      <div><h3>Contact Us</h3><p>☎ &nbsp;+91 98765 43210</p><p>✉ &nbsp;support@tanushbus.com</p><p>⌖ &nbsp;Kurnool, Andhra Pradesh, India</p></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> TanushBus. All Rights Reserved.</div>
+  </footer>
+
+  <dialog id="bookingDialog" class="modal">
+    <form method="dialog" class="modal-close"><button aria-label="Close">×</button></form>
+    <div id="dialogContent"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
